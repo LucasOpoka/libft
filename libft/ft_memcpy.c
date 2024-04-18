@@ -6,7 +6,7 @@
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:20:13 by lopoka            #+#    #+#             */
-/*   Updated: 2024/04/17 12:30:21 by lopoka           ###   ########.fr       */
+/*   Updated: 2024/04/18 15:27:53 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,7 +18,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t size)
 	size_t	i;
 
 	c_dest = (char *) dest;
-	c_src = (char *) src;
+	c_src = (char *) src;	
+	if (!dest || !src)
+		return (NULL);
+	if (size == 0 || c_dest == c_src)
+		return (dest);
 	i = 0;
 	while (i < size)
 	{

@@ -6,7 +6,7 @@
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:38:17 by lopoka            #+#    #+#             */
-/*   Updated: 2024/04/17 13:30:26 by lopoka           ###   ########.fr       */
+/*   Updated: 2024/04/18 14:48:23 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,7 +15,6 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 {
 	char	*c_dest;
 	char	*c_src;
-	size_t	i;
 
 	c_dest = (char *) dest;
 	c_src = (char *) src;

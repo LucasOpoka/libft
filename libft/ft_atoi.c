@@ -1,32 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 09:58:57 by lopoka            #+#    #+#             */
-/*   Updated: 2024/04/18 14:42:29 by lopoka           ###   ########.fr       */
+/*   Created: 2024/04/18 11:59:18 by lopoka            #+#    #+#             */
+/*   Updated: 2024/04/18 12:28:34 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_atoi(const char *str)
 {
-	size_t	n;
+	int	res;
+	int	sign;
 
-	n = 0;
-	while (str[n])
+	res = 0;
+	sign = 1;
+	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
 	{
-		n++;
+		str++;
 	}
-	return (n);
+	if (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			sign *= -1;
+		str++;
+	}
+	while ('0' <= *str && *str <= '9')
+	{
+		res = res * 10 + *str - 48;
+		str++;
+	}
+	return (res * sign);
 }
 /*
 #include <stdio.h>
+#include <stdlib.h>
 int main(void)
 {
-	printf("Momina %zu\n", ft_strlen("Momina"));
+	char str[] = "     ++214678678";
+	printf("my %d\n", ft_atoi(str));
+	printf("og %d\n", atoi(str));
 	return 0;
 }
 */

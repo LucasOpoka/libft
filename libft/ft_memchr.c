@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 09:58:57 by lopoka            #+#    #+#             */
-/*   Updated: 2024/04/18 14:42:29 by lopoka           ###   ########.fr       */
+/*   Created: 2024/04/18 10:34:15 by lopoka            #+#    #+#             */
+/*   Updated: 2024/04/18 10:51:55 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*ft_memchr(const void *mem, int c, size_t size)
 {
-	size_t	n;
+	const char	*c_mem;
+	size_t		n;
 
 	n = 0;
-	while (str[n])
+	c_mem = (const char *) mem;
+	while (n < size)
 	{
+		if (c_mem[n] == c)
+			return ((void *)&c_mem[n]);
 		n++;
 	}
-	return (n);
+	return (0);
 }
 /*
 #include <stdio.h>
 int main(void)
 {
-	printf("Momina %zu\n", ft_strlen("Momina"));
+	char s[] = "Monika i Konstanty na plazy";
+	printf("%s\n", ft_memchr(s, 'a', 10));
 	return 0;
 }
 */

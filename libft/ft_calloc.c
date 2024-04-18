@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 09:58:57 by lopoka            #+#    #+#             */
-/*   Updated: 2024/04/18 14:42:29 by lopoka           ###   ########.fr       */
+/*   Created: 2024/04/18 13:16:20 by lopoka            #+#    #+#             */
+/*   Updated: 2024/04/18 13:40:05 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	n;
+	void	*mem;
 
-	n = 0;
-	while (str[n])
-	{
-		n++;
-	}
-	return (n);
+	mem = (void *) malloc(count * size);
+	if (!mem)
+		return (mem);
+	bzero(mem, count * size);
+	return (mem);
 }
 /*
 #include <stdio.h>
 int main(void)
 {
-	printf("Momina %zu\n", ft_strlen("Momina"));
+	char	*ptr = (char *) ft_calloc(10, sizeof(char));
+	for (int i = 0; i<20; i++) printf("%d", ptr[i]);
 	return 0;
 }
 */

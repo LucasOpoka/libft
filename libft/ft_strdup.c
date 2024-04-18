@@ -1,32 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 09:58:57 by lopoka            #+#    #+#             */
-/*   Updated: 2024/04/18 14:42:29 by lopoka           ###   ########.fr       */
+/*   Created: 2024/04/18 13:41:26 by lopoka            #+#    #+#             */
+/*   Updated: 2024/04/18 13:50:24 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "libft.h" 
 
-size_t	ft_strlen(const char *str)
+char	*ft_strcpy(char *dest, const char *src)
 {
-	size_t	n;
+	size_t	i;
 
-	n = 0;
-	while (str[n])
+	i = 0;
+	while (src[i])
 	{
-		n++;
+		dest[i] = src[i];
+		i++;
 	}
-	return (n);
+	dest[i] = '\0';
+	return (dest);
+}
+
+char	*ft_strdup(const char *src)
+{
+	char	*new;
+
+	new = (char *) malloc((ft_strlen(src) + 1) * sizeof(char));
+	if (!new)
+		return (0);
+	ft_strcpy(new, src);
+	return (new);
 }
 /*
 #include <stdio.h>
 int main(void)
 {
-	printf("Momina %zu\n", ft_strlen("Momina"));
+	char str[] = "lalalalalala";
+	char *new = ft_strdup(str);
+	printf("%p %s\n%p %s", str, str, new, new);
 	return 0;
 }
 */
