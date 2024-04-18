@@ -6,25 +6,14 @@
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 17:33:22 by lopoka            #+#    #+#             */
-/*   Updated: 2024/01/16 19:23:28 by lopoka           ###   ########.fr       */
+/*   Updated: 2024/04/18 22:45:05 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-unsigned int	ft_strlen(char *str)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned int	n;
-
-	n = 0;
-	while (str[n])
-	{
-		n++;
-	}
-	return (n);
-}
-
-unsigned	int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	if (size > 0)
@@ -38,13 +27,15 @@ unsigned	int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	}
 	return (ft_strlen(src));
 }
-/*#include <stdio.h>
+/*
+#include <stdio.h>
 #include <string.h>
 int	main(void)
 {
 	char str[] = "Monika";
 	char str1[7];
 
-	printf("%u", ft_strlcpy(str1, str, 4));
+	printf("%zu", ft_strlcpy(str1, str, 7));
 	printf("\n%s", str1);
-}*/
+}
+*/

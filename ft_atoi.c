@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 11:22:02 by lopoka            #+#    #+#             */
-/*   Updated: 2024/01/23 11:16:23 by lopoka           ###   ########.fr       */
+/*   Created: 2024/04/18 11:59:18 by lopoka            #+#    #+#             */
+/*   Updated: 2024/04/18 12:28:34 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	res;
 	int	sign;
@@ -21,7 +21,7 @@ int	ft_atoi(char *str)
 	{
 		str++;
 	}
-	while (*str == '+' || *str == '-')
+	if (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
 			sign *= -1;
@@ -34,12 +34,14 @@ int	ft_atoi(char *str)
 	}
 	return (res * sign);
 }
-/*#include <stdio.h>
+/*
+#include <stdio.h>
 #include <stdlib.h>
 int main(void)
 {
-	char str[] = "     --+2143647567";
+	char str[] = "     ++214678678";
 	printf("my %d\n", ft_atoi(str));
 	printf("og %d\n", atoi(str));
 	return 0;
-}*/
+}
+*/

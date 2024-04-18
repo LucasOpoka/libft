@@ -1,47 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 13:41:26 by lopoka            #+#    #+#             */
-/*   Updated: 2024/04/18 13:50:24 by lopoka           ###   ########.fr       */
+/*   Created: 2024/04/18 09:28:17 by lopoka            #+#    #+#             */
+/*   Updated: 2024/04/18 10:11:58 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h" 
+#include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	char	*tmp;
+	char	cc;
 
-	i = 0;
-	while (src[i])
+	cc = (char) c;
+	tmp = NULL;
+	while (1)
 	{
-		dest[i] = src[i];
-		i++;
+		if (*s == cc)
+			tmp = (char *)s;
+		if (*s == 0)
+			return (tmp);
+		s++;
 	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-char	*ft_strdup(const char *src)
-{
-	char	*new;
-
-	new = (char *) malloc((ft_strlen(src) + 1) * sizeof(char));
-	if (!new)
-		return (0);
-	ft_strcpy(new, src);
-	return (new);
 }
 /*
 #include <stdio.h>
 int main(void)
 {
-	char str[] = "lalalalalala";
-	char *new = ft_strdup(str);
-	printf("%p %s\n%p %s", str, str, new, new);
+	char s[] = "Monika i Konstanty";
+	printf("%s\n", ft_strrchr(s, 'x'));
 	return 0;
 }
 */

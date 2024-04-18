@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 09:28:17 by lopoka            #+#    #+#             */
-/*   Updated: 2024/04/18 10:11:58 by lopoka           ###   ########.fr       */
+/*   Created: 2024/04/18 10:34:15 by lopoka            #+#    #+#             */
+/*   Updated: 2024/04/18 10:51:55 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memchr(const void *mem, int c, size_t size)
 {
-	char	*tmp;
+	const char	*c_mem;
+	char		cc;
+	size_t		n;
 
-	tmp = 0;
-	while (*s)
+	cc = (char) c;
+	n = 0;
+	c_mem = (const char *) mem;
+	while (n < size)
 	{
-		if (*s == c)
-			tmp = (char *)s;
-		s++;
+		if (c_mem[n] == cc)
+			return ((void *)&c_mem[n]);
+		n++;
 	}
-	if (c == 0)
-		return ((char *)s);
-	else
-		return (tmp);
+	return (0);
 }
 /*
 #include <stdio.h>
 int main(void)
 {
-	char s[] = "Monika i Konstanty";
-	printf("%s\n", ft_strrchr(s, 'x'));
+	char s[] = "Monika i Konstanty na plazy";
+	printf("%s\n", ft_memchr(s, 'a', 10));
 	return 0;
 }
 */

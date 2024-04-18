@@ -5,27 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 12:25:56 by lopoka            #+#    #+#             */
-/*   Updated: 2024/01/24 17:39:16 by lopoka           ###   ########.fr       */
+/*   Created: 2024/04/18 13:41:26 by lopoka            #+#    #+#             */
+/*   Updated: 2024/04/18 13:50:24 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+#include "libft.h" 
 
-int	ft_strlen(char *str)
+char	*ft_strcpy(char *dest, const char *src)
 {
-	int	n;
-
-	n = 0;
-	while (str[n])
-	{
-		n++;
-	}
-	return (n);
-}
-
-char	*ft_strcpy(char *dest, char *src)
-{
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (src[i])
@@ -37,7 +25,7 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	char	*new;
 
@@ -47,11 +35,13 @@ char	*ft_strdup(char *src)
 	ft_strcpy(new, src);
 	return (new);
 }
-/*#include <stdio.h>
+/*
+#include <stdio.h>
 int main(void)
 {
 	char str[] = "lalalalalala";
 	char *new = ft_strdup(str);
 	printf("%p %s\n%p %s", str, str, new, new);
 	return 0;
-}*/
+}
+*/

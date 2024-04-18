@@ -1,45 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncmp.c                                          :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 09:41:09 by lopoka            #+#    #+#             */
-/*   Updated: 2024/04/18 15:07:38 by lopoka           ###   ########.fr       */
+/*   Created: 2024/04/18 21:38:27 by lopoka            #+#    #+#             */
+/*   Updated: 2024/04/18 22:43:35 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t size)
 {
-	size_t			i;
-	unsigned char	uc1;
-	unsigned char	uc2;
+	char			*new;
+	size_t			avail_size;
 
-	i = 0;
-	while (i < n)
-	{
-		uc1 = (unsigned char)s1[i]; 
-		uc2 = (unsigned char) s2[i];
-		if (uc1 != uc2)
-			return (uc1 - uc2);
-		if (!uc1)
-			return (0);
-		i++;
-	}
-	return (0);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	avail_size = ft_strlen(s + start);
+	if (size > avail_size)
+		size = avail_size;
+	new = (char *) malloc((size + 1) * sizeof(char));
+	if (!new)
+		return (NULL);
+	ft_strlcpy(new, s + start, size + 1);
+	return (new);
 }
 /*
 #include <stdio.h>
-#include <string.h>
 int main(void)
 {
-	char str1[] = "abceeee";
-	char str2[] = "abceeee";
-	unsigned int i = 6;
-
-	printf("my %d og %d", ft_strncmp(str1, str2, i), strncmp(str1, str2, i));
+	char s[] = "Momina i Lukasz";
+	printf("%s\n", ft_substr(s,3,3));
 	return 0;
 }
 */

@@ -1,44 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 18:34:01 by lopoka            #+#    #+#             */
-/*   Updated: 2024/01/18 10:36:32 by lopoka           ###   ########.fr       */
+/*   Created: 2024/04/18 11:20:23 by lopoka            #+#    #+#             */
+/*   Updated: 2024/04/18 11:52:55 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-char	*ft_strstr(char *str, char *to_find)
+char	*ft_strnstr(const char *str, const char *to_find, size_t size)
 {
-	char	*tmp_str;
-	char	*tmp_to_find;
+	size_t	i;
+	size_t	j;
 
+	i = 0;
 	if (!*to_find)
-		return (str);
-	while (*str)
+		return ((char *)str);
+	while (str[i])
 	{
-		tmp_str = str;
-		tmp_to_find = to_find;
-		while (*tmp_str && *tmp_to_find && *tmp_str == *tmp_to_find)
+		j = 0;
+		while (str[i + j] && to_find[j]
+			&& str[i + j] == to_find[j] && (i + j) < size)
 		{
-			tmp_to_find++;
-			tmp_str++;
+			j++;
 		}
-		if (!*tmp_to_find)
-			return (str);
-		str++;
+		if (!to_find[j])
+			return ((char *)&str[i]);
+		i++;
 	}
-	return (0);
+	return (NULL);
 }
-/*#include <stdio.h>
+/*
+#include <stdio.h>
 #include <string.h>
 int main(void)
 {
-    char str2[] = "Monika <3 Lukasz";
-    char str1[] = "<";
+    char str2[] = "abcdefghijklmnoprst";
+    char str1[] = "f";
     
-    printf("%s\n%s", ft_strstr(str2, str1), strstr(str2, str1));
+    printf("my %s\n", ft_strnstr(str2, str1, 5));
+
     return 0;
-}*/
+}
+*/

@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 15:56:50 by lopoka            #+#    #+#             */
-/*   Updated: 2024/01/13 16:16:40 by lopoka           ###   ########.fr       */
+/*   Created: 2024/04/18 09:15:01 by lopoka            #+#    #+#             */
+/*   Updated: 2024/04/18 14:53:28 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-char	*ft_strlowcase(char *str)
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	char	cc;
 
-	i = 0;
-	while (str[i])
+	cc = (char) c;
+	while (1)
 	{
-		if ('A' <= str[i] && str[i] <= 'Z')
-		{
-			str[i] += 32;
-		}
-		i++;
+		if (*s == cc)
+			return ((char *)s);
+		if (*s == 0)
+			return (NULL);
+		s++;
 	}
-	return (str);
 }
+/*
+#include <stdio.h>
+int main(void)
+{
+	char s[] = "Monika i Konstanty";
+	printf("%s\n", ft_strchr(s, 'a'));
+	return 0;
+}
+*/

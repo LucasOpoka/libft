@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 17:33:22 by lopoka            #+#    #+#             */
-/*   Updated: 2024/04/17 14:01:33 by lopoka           ###   ########.fr       */
+/*   Created: 2024/04/17 12:20:13 by lopoka            #+#    #+#             */
+/*   Updated: 2024/04/18 15:27:53 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, char *src, size_t size)
+void	*ft_memcpy(void *dest, const void *src, size_t size)
 {
+	char	*c_dest;
+	char	*c_src;
 	size_t	i;
 
+	c_dest = (char *) dest;
+	c_src = (char *) src;
+	if (size == 0 || dest == src)
+		return (dest);
 	i = 0;
-	if (size > 0)
+	while (i < size)
 	{
-		while (src[i] && i < size - 1)
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
+		c_dest[i] = c_src[i];
+		i++;
 	}
-	return (ft_strlen(src));
+	return (dest);
 }
 /*
 #include <stdio.h>
-#include <string.h>
-int	main(void)
+int main(void)
 {
-	char str[] = "Monika";
-	char str1[7];
-
-	printf("%zu", ft_strlcpy(str1, str, 7));
-	printf("\n%s", str1);
-}
-*/
+	char s1[] = "Momina";
+	char *s2 = (char*) calloc(7, sizeof(char));
+	printf("%s\n", ft_memcpy(s2, s1, 3));
+	return 0;
+	}
+*/	

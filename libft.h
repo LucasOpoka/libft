@@ -6,7 +6,7 @@
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:34:58 by lopoka            #+#    #+#             */
-/*   Updated: 2024/04/18 13:50:58 by lopoka           ###   ########.fr       */
+/*   Updated: 2024/04/18 22:58:44 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@ size_t	ft_strlen(const char *str);
 
 void	*ft_memset(void *mem, int val, size_t size);
 
+void	ft_bzero(void *mem, size_t size);
+
 void	*ft_memcpy(void *dest, const void *src, size_t size);
 
 void	*ft_memmove(void *dest, const void *src, size_t size);
 
-size_t	ft_strlcpy(char *dest, char *src, size_t size);
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 
@@ -51,5 +53,7 @@ int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 
 char	*ft_strdup(const char *src);
+
+char	*ft_substr(char const *s, unsigned int start, size_t size);
 
 #endif
