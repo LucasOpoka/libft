@@ -1,32 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 13:16:20 by lopoka            #+#    #+#             */
-/*   Updated: 2024/04/20 15:13:33 by lopoka           ###   ########.fr       */
+/*   Created: 2024/04/20 10:46:46 by lopoka            #+#    #+#             */
+/*   Updated: 2024/04/20 11:05:56 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	void	*mem;
+	unsigned int	i;
+	char			*res;
 
-	mem = (void *) malloc(count * size);
-	if (!mem)
-		return (mem);
-	ft_bzero(mem, count * size);
-	return (mem);
+	res = ft_strdup(s);
+	i = 0;
+	while (res && res[i])
+	{
+		res[i] = f(i, res[i]);
+		i++;
+	}
+	return (res);
 }
 /*
 #include <stdio.h>
+char f(unsigned int i, char c)
+{
+    if (i % 2 == 0)
+        return ft_toupper(c);
+    else
+        return ft_tolower(c);
+}
+
 int main(void)
 {
-	char	*ptr = (char *) ft_calloc(10, sizeof(char));
-	for (int i = 0; i<20; i++) printf("%d", ptr[i]);
+	char *s = "monika i konstanty na plazy";
+	printf("%s\n", ft_strmapi(s, f));
 	return 0;
 }
 */

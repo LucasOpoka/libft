@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 13:16:20 by lopoka            #+#    #+#             */
-/*   Updated: 2024/04/20 15:13:33 by lopoka           ###   ########.fr       */
+/*   Created: 2024/04/20 15:47:25 by lopoka            #+#    #+#             */
+/*   Updated: 2024/04/20 16:10:09 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	void	*mem;
+	t_list	*node;
+	t_list	*tmp;
 
-	mem = (void *) malloc(count * size);
-	if (!mem)
-		return (mem);
-	ft_bzero(mem, count * size);
-	return (mem);
+	if (!lst || !(*lst) || !del)
+		return ;
+	node = *lst;
+	*lst = NULL;
+	while (node)
+	{
+		del(node->content);
+		tmp = node->next;
+		free(node);
+		node = tmp;
+	}
 }
-/*
-#include <stdio.h>
-int main(void)
-{
-	char	*ptr = (char *) ft_calloc(10, sizeof(char));
-	for (int i = 0; i<20; i++) printf("%d", ptr[i]);
-	return 0;
-}
-*/

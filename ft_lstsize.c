@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 13:16:20 by lopoka            #+#    #+#             */
-/*   Updated: 2024/04/20 15:13:33 by lopoka           ###   ########.fr       */
+/*   Created: 2024/04/20 15:22:25 by lopoka            #+#    #+#             */
+/*   Updated: 2024/04/20 15:26:05 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+int	ft_lstsize(t_list *lst)
 {
-	void	*mem;
+	int	i;
 
-	mem = (void *) malloc(count * size);
-	if (!mem)
-		return (mem);
-	ft_bzero(mem, count * size);
-	return (mem);
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }
-/*
-#include <stdio.h>
-int main(void)
-{
-	char	*ptr = (char *) ft_calloc(10, sizeof(char));
-	for (int i = 0; i<20; i++) printf("%d", ptr[i]);
-	return 0;
-}
-*/
