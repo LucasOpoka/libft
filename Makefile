@@ -6,7 +6,7 @@
 #    By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 13:52:43 by lopoka            #+#    #+#              #
-#    Updated: 2024/04/21 19:00:37 by lucas            ###   ########.fr        #
+#    Updated: 2024/04/21 20:30:04 by lucas            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,8 +66,8 @@ BONUS_OFILES = ${BONUS_SRCS:c=o}
 ${NAME} : ${OFILES}
 	${CRLIB} ${NAME} ${OFILES}
 
-bonus : ${BONUS_OFILES}
-	${CRLIB} ${NAME} ${BONUS_OFILES}
+bonus : ${OFILES} ${BONUS_OFILES}
+	${CRLIB} ${NAME} ${OFILES} ${BONUS_OFILES}
 
 all : ${NAME}
 
@@ -75,10 +75,10 @@ all : ${NAME}
 	${CC} ${CFLAGS} -c -o $@ $<
 
 clean :
-	rm -f ${OFILES}
+	rm -f ${OFILES} ${BONUS_OFILES}
 
 fclean :
-	rm -f ${NAME} ${OFILES}
+	rm -f ${NAME} ${OFILES} ${BONUS_OFILES}
 
 re : fclean all
 
