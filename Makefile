@@ -6,7 +6,7 @@
 #    By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 13:52:43 by lopoka            #+#    #+#              #
-#    Updated: 2024/04/20 15:51:51 by lopoka           ###   ########.fr        #
+#    Updated: 2024/04/21 19:00:37 by lucas            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,8 @@ BONUS_SRCS = ft_lstnew.c \
 			 ft_lstadd_back.c \
 			 ft_lstdelone.c \
 			 ft_lstclear.c \
+			 ft_lstiter.c \
+			 ft_lstmap.c \
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
