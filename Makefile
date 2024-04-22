@@ -6,7 +6,7 @@
 #    By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 13:52:43 by lopoka            #+#    #+#              #
-#    Updated: 2024/04/22 12:29:31 by lopoka           ###   ########.fr        #
+#    Updated: 2024/04/22 15:18:12 by lopoka           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,6 +83,6 @@ clean :
 
 fclean :
 	rm -f ${NAME} ${OFILES} ${BONUS_OFILES}
+	@rm -f .bonus
 
 re : fclean all
-
