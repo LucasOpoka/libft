@@ -6,12 +6,12 @@
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:41:26 by lopoka            #+#    #+#             */
-/*   Updated: 2024/04/18 13:50:24 by lopoka           ###   ########.fr       */
+/*   Updated: 2024/04/22 15:12:09 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h" 
 
-char	*ft_strcpy(char *dest, const char *src)
+static char	*ft_strcpy(char *dest, const char *src)
 {
 	size_t	i;
 
