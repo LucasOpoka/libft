@@ -6,7 +6,7 @@
 #    By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 13:52:43 by lopoka            #+#    #+#              #
-#    Updated: 2024/04/22 15:18:12 by lopoka           ###   ########.fr        #
+#    Updated: 2024/05/12 18:29:54 by lopoka           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRCS = ft_isalpha.c \
 	   ft_memchr.c \
 	   ft_memcmp.c \
 	   ft_strnstr.c \
+	   ft_strstr.c \
 	   ft_atoi.c \
 	   ft_calloc.c \
 	   ft_strdup.c \
@@ -44,16 +45,15 @@ SRCS = ft_isalpha.c \
 	   ft_putstr_fd.c \
 	   ft_putendl_fd.c \
 	   ft_putnbr_fd.c \
-
-BONUS_SRCS = ft_lstnew.c \
-			 ft_lstadd_front.c \
-			 ft_lstsize.c \
-			 ft_lstlast.c \
-			 ft_lstadd_back.c \
-			 ft_lstdelone.c \
-			 ft_lstclear.c \
-			 ft_lstiter.c \
-			 ft_lstmap.c \
+	   ft_lstnew.c \
+	   ft_lstadd_front.c \
+	   ft_lstsize.c \
+	   ft_lstlast.c \
+	   ft_lstadd_back.c \
+	   ft_lstdelone.c \
+	   ft_lstclear.c \
+	   ft_lstiter.c \
+	   ft_lstmap.c \
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -61,16 +61,9 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 CRLIB = ar rcs
 OFILES = ${SRCS:c=o}
-BONUS_OFILES = ${BONUS_SRCS:c=o}
 
 ${NAME} : ${OFILES}
 	${CRLIB} ${NAME} ${OFILES}
-
-bonus : .bonus
-
-.bonus : ${OFILES} ${BONUS_OFILES}
-	${CRLIB} ${NAME} ${OFILES} ${BONUS_OFILES}
-	@touch .bonus
 
 all : ${NAME}
 
@@ -78,11 +71,9 @@ all : ${NAME}
 	${CC} ${CFLAGS} -c -o $@ $<
 
 clean :
-	rm -f ${OFILES} ${BONUS_OFILES}
-	@rm -f .bonus
+	rm -f ${OFILES}
 
 fclean :
-	rm -f ${NAME} ${OFILES} ${BONUS_OFILES}
-	@rm -f .bonus
+	rm -f ${NAME} ${OFILES}
 
 re : fclean all

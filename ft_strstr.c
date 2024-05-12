@@ -6,12 +6,12 @@
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 18:24:03 by lopoka            #+#    #+#             */
-/*   Updated: 2024/05/12 18:24:38 by lopoka           ###   ########.fr       */
+/*   Updated: 2024/05/12 18:31:22 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find)
+char	*ft_strstr(const char *str, const char *to_find)
 {
 	size_t	i;
 	size_t	j;
