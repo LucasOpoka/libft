@@ -6,7 +6,7 @@
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:20:23 by lopoka            #+#    #+#             */
-/*   Updated: 2024/04/18 11:52:55 by lopoka           ###   ########.fr       */
+/*   Updated: 2024/05/12 18:19:10 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t size)
 	i = 0;
 	if (!*to_find)
 		return ((char *)str);
-	while (str[i])
+	while (str[i] && i < size)
 	{
 		j = 0;
 		while (str[i + j] && to_find[j]
@@ -33,16 +33,3 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t size)
 	}
 	return (NULL);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int main(void)
-{
-    char str2[] = "abcdefghijklmnoprst";
-    char str1[] = "f";
-    
-    printf("my %s\n", ft_strnstr(str2, str1, 5));
-
-    return 0;
-}
-*/
