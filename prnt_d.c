@@ -6,10 +6,10 @@
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:59:00 by lopoka            #+#    #+#             */
-/*   Updated: 2024/05/03 16:53:28 by lopoka           ###   ########.fr       */
+/*   Updated: 2024/05/13 17:34:07 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_printf.h"
+#include "libft.h"
 
 void	prnt_d(int nb, int *len, int *err)
 {

@@ -6,10 +6,10 @@
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 18:27:13 by lopoka            #+#    #+#             */
-/*   Updated: 2024/05/03 17:13:28 by lopoka           ###   ########.fr       */
+/*   Updated: 2024/05/13 17:32:12 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_printf.h"
+#include "libft.h"
 
 int	prnt_f(char f, va_list arg)
 {

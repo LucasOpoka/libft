@@ -6,10 +6,10 @@
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:59:25 by lopoka            #+#    #+#             */
-/*   Updated: 2024/05/03 16:56:37 by lopoka           ###   ########.fr       */
+/*   Updated: 2024/05/13 17:35:26 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_printf.h"
+#include "libft.h"
 
 void	prnt_u(unsigned int nb, int *len, int *err)
 {
