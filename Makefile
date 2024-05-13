@@ -6,7 +6,7 @@
 #    By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 13:52:43 by lopoka            #+#    #+#              #
-#    Updated: 2024/05/12 18:29:54 by lopoka           ###   ########.fr        #
+#    Updated: 2024/05/13 17:04:51 by lopoka           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,11 +58,18 @@ SRCS = ft_isalpha.c \
 	   ft_lstmap.c \
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+
+CFLAGS += -Wall -Wextra -Werror
+
+DEPSFLAGS += -MMD -MP
 
 NAME = libft.a
+
 CRLIB = ar rcs
+
 OFILES = ${SRCS:c=o}
+
+DEPS = $(SRCS:.c=.d)
 
 ${NAME} : ${OFILES}
 	${CRLIB} ${NAME} ${OFILES}
@@ -70,12 +77,20 @@ ${NAME} : ${OFILES}
 all : ${NAME}
 
 %.o : %.c libft.h
-	${CC} ${CFLAGS} -c -o $@ $<
+	${CC} ${CFLAGS} ${DEPSFLAGS} -c -o $@ $<
 
 clean :
-	rm -f ${OFILES}
+	rm -f ${OFILES} ${DEPS}
 
 fclean :
-	rm -f ${NAME} ${OFILES}
+	rm -f ${NAME} ${OFILES} ${DEPS}
 
 re : fclean all
+
+-include ${DEPS}
+
+redeps :
+	touch ${DEPS}
+	make
+
+.PHONY : all clean fclean re redeps
