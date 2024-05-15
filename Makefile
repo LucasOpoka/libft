@@ -6,7 +6,7 @@
 #    By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 13:52:43 by lopoka            #+#    #+#              #
-#    Updated: 2024/05/15 11:55:13 by lopoka           ###   ########.fr        #
+#    Updated: 2024/05/15 16:50:26 by lopoka           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,6 +74,7 @@ SRCS = ft_isalpha.c \
 	   prnt_u_fd.c \
 	   prnt_lw_x_fd.c \
 	   prnt_up_x_fd.c \
+	   ft_realloc.c
 
 CC = cc
 
