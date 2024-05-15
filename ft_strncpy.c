@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 11:37:25 by lopoka            #+#    #+#             */
-/*   Updated: 2024/05/15 11:58:29 by lopoka           ###   ########.fr       */
+/*   Created: 2024/05/15 11:51:46 by lopoka            #+#    #+#             */
+/*   Updated: 2024/05/15 11:52:42 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	char	*strt;
+	size_t	i;
 
-	strt = dest;
-	while (*dest)
-		dest++;
-	while (*src)
-		*dest++ = *src++;
-	*dest = 0;
-	return (strt);
+	i = 0;
+	while (src[i] && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	return (dest + i);
 }

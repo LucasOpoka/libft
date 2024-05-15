@@ -6,7 +6,7 @@
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:34:58 by lopoka            #+#    #+#             */
-/*   Updated: 2024/05/14 13:59:01 by lopoka           ###   ########.fr       */
+/*   Updated: 2024/05/15 11:58:54 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,11 @@ void	*ft_memmove(void *dest, const void *src, size_t size);
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 
+char	*ft_strncpy(char *dest, const char *src, size_t n);
+
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
+
+char	*ft_strcat(char *dest, const char *src);
 
 int		ft_toupper(int c);
 
