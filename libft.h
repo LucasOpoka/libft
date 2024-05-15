@@ -6,7 +6,7 @@
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:34:58 by lopoka            #+#    #+#             */
-/*   Updated: 2024/05/15 16:51:07 by lopoka           ###   ########.fr       */
+/*   Updated: 2024/05/15 16:57:40 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,5 +178,7 @@ void	prnt_lw_x_fd(int fd, unsigned int n, int *len, int *err);
 void	prnt_up_x_fd(int fd, unsigned int n, int *len, int *err);
 
 void	*ft_realloc(void *src, size_t old_s, size_t add_s);
+
+char	*ft_str_insert(char *str1, char *str2, size_t ix, size_t skip);
 
 #endif
