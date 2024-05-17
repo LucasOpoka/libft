@@ -6,7 +6,7 @@
 #    By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 13:52:43 by lopoka            #+#    #+#              #
-#    Updated: 2024/05/17 11:04:57 by lopoka           ###   ########.fr        #
+#    Updated: 2024/05/17 11:18:46 by lopoka           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,7 @@ SRCS = ft_isalpha.c \
 	   ft_lstiter.c \
 	   ft_lstmap.c \
 	   ft_printf.c \
+	   ft_printf_fd.c \
 	   ft_prnt_c.c \
 	   ft_prnt_s.c \
 	   ft_prnt_p.c \
