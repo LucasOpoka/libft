@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prnt_x.c                                           :+:      :+:    :+:   */
+/*   ft_prnt_u.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 13:59:52 by lopoka            #+#    #+#             */
-/*   Updated: 2024/05/13 17:35:07 by lopoka           ###   ########.fr       */
+/*   Created: 2024/05/03 13:59:25 by lopoka            #+#    #+#             */
+/*   Updated: 2024/05/17 10:54:17 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	prnt_x(unsigned int n, int *len, int capital, int *err)
+void	ft_prnt_u(t_printf *stc, unsigned int nb)
 {
-	char	c;
-	char	*base;
-
-	if (capital)
-		base = "0123456789ABCDEF";
-	else
-		base = "0123456789abcdef";
-	if (n / 16 > 0)
-		prnt_x(n / 16, len, capital, err);
-	c = base[n % 16];
-	if (!*err)
-		err_chck(write(1, &c, 1), len, err);
+	if (nb / 10 > 0)
+		ft_prnt_u(stc, nb / 10);
+	ft_prnt_c(stc, (nb % 10) + 48);
 }

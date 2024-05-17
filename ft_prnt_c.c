@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   err_chck.c                                         :+:      :+:    :+:   */
+/*   ft_prnt_c.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 16:41:40 by lopoka            #+#    #+#             */
-/*   Updated: 2024/05/03 17:17:30 by lopoka           ###   ########.fr       */
+/*   Created: 2024/05/03 13:57:56 by lopoka            #+#    #+#             */
+/*   Updated: 2024/05/17 10:53:19 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-void	err_chck(int write_res, int *len, int *err)
+void	ft_prnt_c(t_printf *stc, int c)
 {
-	if (write_res < 0)
-	{
-		*len = -1;
-		*err = 1;
-	}
-	else
-		*len += write_res;
+	ft_printf_realloc(stc);
+	ft_prnt_add(stc, c);
 }

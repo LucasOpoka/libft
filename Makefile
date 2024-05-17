@@ -6,7 +6,7 @@
 #    By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 13:52:43 by lopoka            #+#    #+#              #
-#    Updated: 2024/05/15 16:57:13 by lopoka           ###   ########.fr        #
+#    Updated: 2024/05/17 10:52:30 by lopoka           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,24 +59,17 @@ SRCS = ft_isalpha.c \
 	   ft_lstiter.c \
 	   ft_lstmap.c \
 	   ft_printf.c \
-	   err_chck.c \
-	   prnt_c.c \
-	   prnt_d.c \
-	   prnt_p.c \
-	   prnt_s.c \
-	   prnt_u.c \
-	   prnt_x.c \
-	   ft_printf_fd.c \
-	   prnt_c_fd.c \
-	   prnt_s_fd.c \
-	   prnt_p_fd.c \
-	   prnt_d_fd.c \
-	   prnt_u_fd.c \
-	   prnt_lw_x_fd.c \
-	   prnt_up_x_fd.c \
+	   ft_prnt_c.c \
+	   ft_prnt_s.c \
+	   ft_prnt_p.c \
+	   ft_prnt_d.c \
+	   ft_prnt_u.c \
+	   ft_prnt_lx.c \
+	   ft_prnt_ux.c \
 	   ft_realloc.c \
-	   ft_str_insert.c \
-
+	   ft_printf_realloc.c \
+	   ft_prnt_add.c \
+	  
 CC = cc
 
 CFLAGS += -Wall -Wextra -Werror

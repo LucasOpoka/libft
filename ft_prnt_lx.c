@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prnt_d.c                                           :+:      :+:    :+:   */
+/*   ft_prnt_lx.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 13:59:00 by lopoka            #+#    #+#             */
-/*   Updated: 2024/05/13 17:34:07 by lopoka           ###   ########.fr       */
+/*   Created: 2024/05/03 13:59:52 by lopoka            #+#    #+#             */
+/*   Updated: 2024/05/17 10:54:34 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	prnt_d(int nb, int *len, int *err)
+void	ft_prnt_lx(t_printf *stc, unsigned int n)
 {
-	char	n;
-
-	if (nb == -2147483648)
-		err_chck(write(1, "-2147483648", 11), len, err);
-	else
-	{
-		if (nb < 0)
-		{
-			err_chck(write (1, "-", 1), len, err);
-			nb *= -1;
-		}
-		if (nb / 10 > 0 && !*err)
-		{
-			prnt_d(nb / 10, len, err);
-		}
-		n = (nb % 10) + 48;
-		if (!*err)
-			err_chck(write(1, &n, 1), len, err);
-	}
+	if (n / 16 > 0)
+		ft_prnt_lx(stc, n / 16);
+	ft_prnt_c(stc, "0123456789abcdef"[n % 16]);
 }

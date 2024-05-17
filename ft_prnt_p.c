@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prnt_c.c                                           :+:      :+:    :+:   */
+/*   ft_prnt_p.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 13:57:56 by lopoka            #+#    #+#             */
-/*   Updated: 2024/05/13 17:33:31 by lopoka           ###   ########.fr       */
+/*   Created: 2024/05/03 13:58:37 by lopoka            #+#    #+#             */
+/*   Updated: 2024/05/17 10:53:49 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	prnt_c(int c)
+void	ft_prnt_p(t_printf *stc, unsigned long long pt)
 {
-	return (write(1, &c, 1));
+	if (pt / 16 > 0)
+		ft_prnt_p(stc, pt / 16);
+	if (pt / 16 == 0)
+		ft_prnt_s(stc, "0x");
+	ft_prnt_c(stc, "0123456789abcdef"[pt % 16]);
 }
