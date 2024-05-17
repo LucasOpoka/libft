@@ -6,7 +6,7 @@
 #    By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 13:52:43 by lopoka            #+#    #+#              #
-#    Updated: 2024/05/17 10:52:30 by lopoka           ###   ########.fr        #
+#    Updated: 2024/05/17 11:04:57 by lopoka           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,11 @@ SRCS = ft_isalpha.c \
 	   ft_split_sub.c \
 	   ft_free_split.c \
 	   ft_itoa.c \
+	   ft_ctoa.c \
+	   ft_lxtoa.c \
+	   ft_ptoa.c \
+	   ft_utoa.c \
+	   ft_uxtoa.c \
 	   ft_strmapi.c \
 	   ft_striteri.c \
 	   ft_putchar_fd.c \

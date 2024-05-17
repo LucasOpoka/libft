@@ -6,7 +6,7 @@
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:34:58 by lopoka            #+#    #+#             */
-/*   Updated: 2024/05/17 10:49:45 by lopoka           ###   ########.fr       */
+/*   Updated: 2024/05/17 11:08:51 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,11 @@ char	*ft_str_insert(char *str1, char *str2, size_t ix, size_t skip);
 
 /* - - - - - Converters to string functions - - - - -*/
 char	*ft_itoa(int nbr);
+char	*ft_ctoa(int c);
+char	*ft_utoa(unsigned int num);
+char	*ft_ptoa(unsigned long long pt);
+char	*ft_uxtoa(unsigned int num);
+char	*ft_lxtoa(unsigned int num);
 
 /* - - - - - Linked list functions - - - - -*/
 t_list	*ft_lstnew(void *content);
