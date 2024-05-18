@@ -6,7 +6,7 @@
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 11:06:16 by lopoka            #+#    #+#             */
-/*   Updated: 2024/05/13 12:33:57 by lopoka           ###   ########.fr       */
+/*   Updated: 2024/05/18 22:14:53 by lopoka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -33,9 +33,13 @@ static inline t_token	get_token(const char **sp, char sep)
 	token.start = *sp;
 	while (**sp && **sp != sep)
 	{
-		if (**sp == '\'' || **sp == '"')
+		if (**sp == '\\')
+			(*sp)++;
+		else if (**sp == '\'' || **sp == '"')
 		{
-			p = strchr(*sp + 1, **sp);
+			p = ft_strchr(*sp + 1, **sp);
+			while (p && p[-1] == '\\')
+				p = ft_strchr(p + 1, **sp);
 			if (p)
 				return (found_substring(&token, sp, p));
 		}
@@ -92,22 +96,10 @@ char	**ft_split_sub(const char *str, char sep)
 		res[i] = ft_strsubstring(token);
 		if (!res[i])
 			return (ft_free_split(res, i));
+		ft_rm_char(res[i], '\\');
 		token = get_token(&str, sep);
 		i++;
 	}
 	res[i] = NULL;
 	return (res);
 }
-/*
-#include <stdio.h>
-int main(int argc, char **argv)
-{
-	const char *text = "awk 'some thing' hello \"str 1\" 'str 2' wdcewvw";
-	char **s = split2(text, ' ');
-	int i = 0;
-	
-	while (s[i])
-		printf("%s\n", s[i++]);
-	return 0;
-}
-*/
