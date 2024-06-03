@@ -6,7 +6,7 @@
 /*   By: lopoka <lopoka@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 10:34:58 by lopoka            #+#    #+#             */
-/*   Updated: 2024/05/20 12:50:30 by lopoka           ###   ########.fr       */
+/*   Updated: 2024/06/03 13:42:37 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *str, const char *to_find, size_t size);
 char	*ft_strstr(const char *str, const char *to_find);
 int		ft_atoi(const char *str);
+double	ft_atof(const char *str);
 char	*ft_strdup(const char *src);
 char	*ft_substr(char const *s, unsigned int start, size_t size);
 char	*ft_strjoin(char const *s1, char const *s2);
